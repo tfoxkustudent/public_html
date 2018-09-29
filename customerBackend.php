@@ -23,7 +23,12 @@ echo "<table border =\"1\" style='border-collapse: collapse'>";
 echo "<tr>";
 echo "<td>receipt</td>";
 echo "</tr>";
-	
+	echo "<tr>";
+  echo "<td></td>";
+  echo "<td>Quantity</td>";
+  echo "<td>Cost Per Item</td>";
+  echo "<td>Subtotal</td>";
+  echo "</tr>";
 		echo "</table>";
 
 
