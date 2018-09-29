@@ -1,5 +1,5 @@
 <?php
-<PHP> include('style.css'); <PHP>
+
 $answer1 = $_POST["username"];
 $answer2 = $_POST["password"];
 $answer3 = $_POST["item1"];
