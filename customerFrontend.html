@@ -10,16 +10,16 @@
   <body>
     <h1>Welcome to Tim's Produce Shop</h1>
     <form onsubmit="validInput()" action="customerBackend.php" method="get">
-      Username<input type="email" name="username"><br>
-      Password<input type="text" name="password" id="password"><br><br>
+      Username<input type="email" id="username"><br>
+      Password<input type="text" id="password"><br><br>
       Pick your produce<br>
       <input type="number" name="item1" min= "0">Bananas ($3.00 bunch)<br>
       <input type="number" name="item2" min= "0">Apples ($2.00 per apple)<br>
       <input type="number" name="item3" min= "0">Oranges ($1.00 per orange)<br><br>
       Pick Shipping<br>
-      <input type="radio" name="shipping" id="hello" value=0>Free 7 day<br>
-      <input type="radio" name="shipping" id= "hello" value=50>$50.00 over night<br>
-      <input type="radio" name="shipping" id = "hello" value=5>$5.00 three day<br><br>
+      <input type="radio" name="shipping" id="hello" value="0">Free 7 day<br>
+      <input type="radio" name="shipping" id= "hello" value="50">$50.00 over night<br>
+      <input type="radio" name="shipping" id = "hello" value="5">$5.00 three day<br><br>
       <input type="reset">
       <input type="submit">
     </form>

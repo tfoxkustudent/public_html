@@ -12,7 +12,7 @@ function validInput()
    {
      alert('You need to enter a password');
    }
-   else if (F.value != 0 || F.value != 5 || F.value != 50)
+   else if (F.value != "0" || F.value != "5" || F.value != "50")
    {
     alert('need to select shipping');
    }
