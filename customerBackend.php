@@ -12,7 +12,13 @@ $applesubtotal = 0;
 $orangesubtotal = 0;
 $shippingsubtotal = 0;
 
+echo "<html>";
+echo "<head>";
+echo "<link type='text/css' rel='stylesheet' href='style.css'></link>";
+echo "</head>";
+echo "<body>";
 
+echo "<h1>";
 echo "<strong>";
 echo "Welcome Back ";
 echo $answer1;
@@ -23,6 +29,8 @@ echo $answer2;
 echo "<br>";
 echo "<br>";
 echo "<br>";
+echo "</h1>";
+echo "<form>";
 echo "<table border =\"1\" style='border-collapse: collapse'>";
 echo "<tr>";
 echo "<td>receipt</td>";
@@ -73,7 +81,9 @@ echo "</tr>";
 
 
     echo "</table>";
-
+echo "</form>";
+echo "</body>";
+echo "</html>";
 
 
 ?>
