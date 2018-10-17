@@ -12,7 +12,7 @@ $new_user = $mysqli->real_escape_string($_REQUEST['username']);
 
 
 $sql = "INSERT INTO Users (user_id)
-VALUES ('$newuser')";
+VALUES ('$new_user')";
 
 if ($mysqli->query($sql) == true) {
 
