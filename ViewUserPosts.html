@@ -1,13 +1,28 @@
-<!DOCTYPE html>
 <html>
+<head>
+  <title>View your users posts</title>
+</head>
 <body>
+  <h1>Pick the User</h1>
+  <form action = "ViewUserPosts.php" method="POST">
+    <?php
+    $mysqli = new mysqli ("mysql.eecs.ku.edu","t399f699","eecs448","t399f699");
 
-<select>
-  <option value="user1">user1</option>
-  <option value="user2">user2</option>
-  <option value="user3">user3</option>
-  <option value="user4">user4</option>
-</select>
+    if (mysqli->connect_errno)
+    {
+    echo "Failed to connect to MySQL: " . $mysqli->connect_error;
+    }
+    $sql = "SELECT user_id FROM Users";
+    $result = $mysqli->query($sql);
+    while ($row = $result->fetch_assoc()) {
+      echo "<option value =" . $row["user_id"] . ">" . $row["user_id"] . "</option>";
+    }
+
+    $mysqli->close();
+    ?>
+  </select>
+  <input type="submit" value = "Submit" >
+</form>
 
 </body>
 </html>
