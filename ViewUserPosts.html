@@ -5,23 +5,26 @@
 <body>
   <h1>Pick the User</h1>
   <form action = "ViewUserPosts.php" method="POST">
+<select name = 'userid'>
     <?php
-    $mysqli = new mysqli ("mysql.eecs.ku.edu","t399f699","eecs448","t399f699");
-
-    if (mysqli->connect_errno)
+    $con=mysqli_connect("mysql.eecs.ku.edu","t399f699","eecs448","t399f699");
+    // Check connection
+    if (mysqli_connect_errno())
     {
-    echo "Failed to connect to MySQL: " . $mysqli->connect_error;
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
-    $sql = "SELECT user_id FROM Users";
-    $result = $mysqli->query($sql);
-    while ($row = $result->fetch_assoc()) {
+
+    $result = mysqli_query($con,"SELECT user_id FROM Users");
+
+
+    while ($row = mysqli_fetch_array($result)) {
       echo "<option value =" . $row["user_id"] . ">" . $row["user_id"] . "</option>";
     }
 
-    $mysqli->close();
+    mysqli_close($con);
     ?>
   </select>
-  <input type="submit" value = "Submit" >
+  <input type="submit">
 </form>
 
 </body>

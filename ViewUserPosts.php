@@ -6,7 +6,13 @@ if (mysqli_connect_errno())
 echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-$result = mysqli_query($con,"SELECT * FROM Posts");
+$userid = $con->real_escape_string($_REQUEST['userid']);
+$query = "SELECT `content` FROM `Posts` WHERE `author_id`=`$userid` ";
+    $result = mysql_query($query);
+
+
+
+
 
 echo "<table border='1'>
 <tr>

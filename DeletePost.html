@@ -1,3 +1,11 @@
+<html>
+<head>
+  <title>Delete Posts</title>
+</head>
+<body>
+  <form action = "DeletePost.php" method = "post">
+
+
 <?php
 $con=mysqli_connect("mysql.eecs.ku.edu","t399f699","eecs448","t399f699");
 // Check connection
@@ -20,11 +28,18 @@ echo "<tr>";
 echo "<td>" . $row['author_id'] . "</td>";
 echo "<td>" . $row['content'] . "</td>";
 echo "<td>" . $row['post_id'] . "</td>";
-echo "<td>" . delete . "</td>";
+echo "<td>";
+echo '<input type="checkbox" name="postid">';
+echo "</td>";
 
 echo "</tr>";
 }
 echo "</table>";
 
+
 mysqli_close($con);
 ?>
+<input type = "submit">
+</form>
+</body>
+</html>
