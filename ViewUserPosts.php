@@ -7,12 +7,10 @@ echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
 $userid = $con->real_escape_string($_REQUEST['userid']);
-$query = "SELECT `content` FROM `Posts` WHERE `author_id`=`$userid` ";
-    $result = mysql_query($query);
+#$query = "SELECT `content` FROM `Posts` WHERE `author_id`=`$userid` ";
+#    $result = mysql_query($query);
 
-
-
-
+  $result = mysqli_query($con,"SELECT * FROM Posts");
 
 echo "<table border='1'>
 <tr>
@@ -23,11 +21,13 @@ echo "<table border='1'>
 
 while($row = mysqli_fetch_array($result))
 {
-echo "<tr>";
-echo "<td>" . $row['author_id'] . "</td>";
-echo "<td>" . $row['content'] . "</td>";
+  if ($userid == $row['author_id']){
+      echo "<tr>";
+      echo "<td>" . $row['author_id'] . "</td>";
+      echo "<td>" . $row['content'] . "</td>";
 
-echo "</tr>";
+      echo "</tr>";
+}
 }
 echo "</table>";
 
